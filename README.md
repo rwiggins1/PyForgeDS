@@ -10,9 +10,6 @@
 
 At the same time, I want PyForgeDS to be a helpful resource for others who are learning too. It provides clean, well-documented, and easy-to-follow implementations that can serve as both a reference and a learning tool.
 
-Built with clarity and educational value in mind—because learning should be as elegant as the code you write.
-
-
 ---
 
 ## 🎯 Goals
@@ -51,7 +48,6 @@ Built with clarity and educational value in mind—because learning should be as
 - **Utilities (Planned)**
   - Visualization tools
   - Complexity notes
-  - Benchmarks
 
 ---
 
