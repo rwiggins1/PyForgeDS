@@ -1,3 +1,5 @@
+from typing import Any
+
 def abc_case(letter: str) -> int:
     abc = {
         "a": 1, "b": 2, "c": 3, "d": 4, "e": 5, "f": 6, "g": 7,
@@ -20,10 +22,10 @@ class hashMap:
         self.size = size
         self.table = [None] * size  # Initialize empty table
     
-    def _hash(self, key: any) -> any:
+    def _hash(self, key: Any) -> Any:
         return hash(key) % self.size
     
-    def insert(self, key, value: int) -> None:
+    def put(self, key, value: int) -> None:
         index = self._hash(key)
         
         if self.table[index]:
@@ -42,7 +44,7 @@ class hashMap:
         self.table[index] = Node(key, value)
         return
     
-    def get(self, key: any, *, default_value: any = -1) -> any:
+    def get(self, key: Any, *, default_value: Any = -1) -> Any:
         index = self._hash(key)
         
         current = self.table[index]
@@ -52,7 +54,7 @@ class hashMap:
             current = current.next
         return default_value
     
-    def delete(self, key: any) -> bool:
+    def remove(self, key: Any) -> bool:
         index = self._hash(key)
         current = self.table[index]
         prev = None
@@ -67,7 +69,19 @@ class hashMap:
             prev = current
             current = current.next
         return False
+
+    def contains(self, key: Any) -> bool:
+        raise NotImplementedError("contains method for HashMap not implemented")
+
+    def isEmpty(self) -> bool:
+        raise NotImplementedError("isEmpty method for HashMap not implemented")
     
+    def isFull(self) -> bool:
+        raise NotImplementedError("isFull method for HashMap not implemented")
+
+    def size(self) -> int:
+        raise NotImplementedError("size method for HashMap not implemented")
+
     def display(self) -> None:
         for i, node in enumerate(self.table):
             print(f"{i}:", end=" ")
