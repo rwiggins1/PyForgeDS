@@ -10,6 +10,9 @@
 
 At the same time, I want PyForgeDS to be a helpful resource for others who are learning too. It provides clean, well-documented, and easy-to-follow implementations that can serve as both a reference and a learning tool.
 
+=======
+ I do plan on remaking this in the future in C++ for regular usage and speed improvements.
+
 ---
 
 ## 🎯 Goals
