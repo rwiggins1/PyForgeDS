@@ -24,6 +24,9 @@ class hashMap:
     
     def _hash(self, key: Any) -> Any:
         return hash(key) % self.size
+
+    def __enlarge(self) -> None:
+        raise NotImplementedError("enlarge method for HashMap not implemented")
     
     def put(self, key, value: int) -> None:
         index = self._hash(key)
