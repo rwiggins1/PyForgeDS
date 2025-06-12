@@ -18,18 +18,20 @@ class Node:
         self.next = None
 
 class hashMap:
-    def __init__(self, size=10):
-        self.size = size
-        self.table = [None] * size  # Initialize empty table
+    def __init__(self, orig_size=10):
+        self.orig_size = orig_size
+        self.table = [None] * orig_size  # Initialize empty table
+        self.num_pairs = 0
     
     def _hash(self, key: Any) -> Any:
-        return hash(key) % self.size
+        return hash(key) % self.orig_size
 
     def __enlarge(self) -> None:
         raise NotImplementedError("enlarge method for HashMap not implemented")
     
     def put(self, key, value: int) -> None:
         index = self._hash(key)
+        self.num_pairs+=1
         
         if self.table[index]:
             # Collision
@@ -68,6 +70,7 @@ class hashMap:
                     self.table[index] = current.next
                 else:
                     prev.next = current.next
+                self.num_pairs-=1
                 return True
             prev = current
             current = current.next
@@ -83,7 +86,7 @@ class hashMap:
         raise NotImplementedError("isFull method for HashMap not implemented")
 
     def size(self) -> int:
-        raise NotImplementedError("size method for HashMap not implemented")
+        return self.num_pairs
 
     def display(self) -> None:
         for i, node in enumerate(self.table):
