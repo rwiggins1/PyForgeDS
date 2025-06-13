@@ -1,4 +1,5 @@
 from typing import Any
+from PyForgeDS.base.LLNode import LLNode as Node
 
 def abc_case(letter: str) -> int:
     abc = {
@@ -10,12 +11,6 @@ def abc_case(letter: str) -> int:
         "y": 25, "z": 26
     }
     return abc[letter]
-
-class Node:
-    def __init__(self, key, value):
-        self.key = key
-        self.value = value
-        self.next = None
 
 class hashMap:
     def __init__(self, orig_size=10):
