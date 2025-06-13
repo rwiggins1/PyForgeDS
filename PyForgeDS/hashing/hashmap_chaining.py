@@ -1,5 +1,5 @@
 from typing import Any
-from PyForgeDS.base.LLNode import LLNode as Node
+from PyForgeDS.base.LLNode import HM_LLNode as Node
 
 def abc_case(letter: str) -> int:
     abc = {
