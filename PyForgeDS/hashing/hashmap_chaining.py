@@ -13,13 +13,13 @@ def abc_case(letter: str) -> int:
     return abc[letter]
 
 class hashMap:
-    def __init__(self, orig_size=10):
-        self.orig_size = orig_size
-        self.table = [None] * orig_size  # Initialize empty table
+    def __init__(self, orig_cap=10):
+        self.orig_cap = orig_cap
+        self.table = [None] * orig_cap  # Initialize empty table
         self.num_pairs = 0
     
     def _hash(self, key: Any) -> Any:
-        return hash(key) % self.orig_size
+        return hash(key) % self.orig_cap
 
     def __enlarge(self) -> None:
         raise NotImplementedError("enlarge method for HashMap not implemented")
