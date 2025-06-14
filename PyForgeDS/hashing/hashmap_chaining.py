@@ -70,15 +70,17 @@ class hashMap:
             prev = current
             current = current.next
         return False
-
+    
+    # check if key exist
     def contains(self, key: Any) -> bool:
         raise NotImplementedError("contains method for HashMap not implemented")
 
     def isEmpty(self) -> bool:
-        raise NotImplementedError("isEmpty method for HashMap not implemented")
+        return(self.num_pairs == 0)
     
+    # is never empty
     def isFull(self) -> bool:
-        raise NotImplementedError("isFull method for HashMap not implemented")
+        return False
 
     def size(self) -> int:
         return self.num_pairs
