@@ -28,7 +28,7 @@ class ArrayStack:
             self.top_index-=1
             return element
 
-    def top(self) -> None:
+    def top(self) -> Any:
         if self.isEmpty():
             raise LookupError("Top attempted on Empty Stack")
         else:
