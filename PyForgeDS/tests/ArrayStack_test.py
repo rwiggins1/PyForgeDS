@@ -20,3 +20,8 @@ def test_top():
     stack.push(13)
     assert stack.top() == 13
 
+def test_pop():
+    stack = ArrayStack(1)
+    stack.push(13)
+    assert stack.pop() == 13
+
