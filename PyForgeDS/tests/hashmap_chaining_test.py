@@ -26,5 +26,3 @@ def test_is_empty():
     ht = hashMap(10)
 
     assert ht.isEmpty() == True
-
-test_insert()

@@ -19,9 +19,12 @@ class ArrayStack:
             self.top_index+=1 
             self.array[self.top_index] = element
 
-    def pop(self):
+    def pop(self) -> Any:
         raise NotImplementedError("Pop method not implemented")
 
-    def top(self):
-        raise NotImplementedError("Top method not implemented")
+    def top(self) -> None:
+        if self.isEmpty():
+            raise LookupError("Top attempted on Empty Stack")
+        else:
+            return self.array[self.top_index]
 

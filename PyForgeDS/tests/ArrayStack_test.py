@@ -13,4 +13,10 @@ def test_isFull():
     stack.push(23)
     stack.push(22)
     assert stack.isFull() == True
-    
+ 
+def test_top():
+    stack = ArrayStack(2)
+    stack.push(23)
+    stack.push(13)
+    assert stack.top() == 13
+
