@@ -1,4 +1,5 @@
 from typing import Any
+from warnings import warn
 from PyForgeDS.base.BSTNode import BSTNode
 
 class BinarySearchTree:
@@ -8,6 +9,24 @@ class BinarySearchTree:
     def isEmpty(self):
         return(self.root == None)
 
+    def recSize(self, node: BSTNode) -> int:
+        raise  NotImplementedError("recSize method not Implemented")
+
+    def size(self) -> int:
+        raise  NotImplementedError("Size method not Implemented")
+
+    def recContains(self, target: Any, node: BSTNode) -> bool:
+        raise  NotImplementedError("recContains method not Implemented")
+
+    def contains(self, target: Any) -> bool:
+        raise  NotImplementedError("Contains method not Implemented")
+
+    def recGet(target: Any, node: BSTNode) -> Any:
+        raise  NotImplementedError("Contains method not Implemented")
+
+    def get(target: Any) -> Any:
+        raise  NotImplementedError("get method not Implemented")
+    
     def min(self) -> Any:
         node = self.root
 
@@ -40,9 +59,11 @@ class BinarySearchTree:
             else:
                 node.right = BSTNode(info)
 
-    def add(self, info):
+    def add(self, info) -> None:
         if self.root == None:
             self.root = BSTNode(info)
         else:
             self.recAdd(info, self.root)
 
+    def remove(self, info) -> None:
+        raise NotImplementedError("Remove method not Implemented")
