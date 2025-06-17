@@ -8,11 +8,25 @@ class BinarySearchTree:
     def isEmpty(self):
         return(self.root == None)
 
-    def min(self):
-        raise NotImplementedError()
+    def min(self) -> Any:
+        node = self.root
 
-    def max(self):
-        raise NotImplementedError()
+        if self.isEmpty():
+            return None
+        else:
+            while node.left:
+                node = node.left
+            return node.info
+
+    def max(self) -> Any:
+        node = self.root
+        
+        if self.isEmpty():
+            return None
+        else:
+            while node.right:
+                node = node.right
+            return node.info
 
     def recAdd(self, info: Any, node: BSTNode):
         if info < node.info:
