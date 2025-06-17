@@ -22,7 +22,7 @@ class BinarySearchTree:
         raise  NotImplementedError("Contains method not Implemented")
 
     def recGet(target: Any, node: BSTNode) -> Any:
-        raise  NotImplementedError("Contains method not Implemented")
+        raise  NotImplementedError("recGet method not Implemented")
 
     def get(target: Any) -> Any:
         raise  NotImplementedError("get method not Implemented")
@@ -64,6 +64,10 @@ class BinarySearchTree:
             self.root = BSTNode(info)
         else:
             self.recAdd(info, self.root)
+
+    def recRemove(self, target: Any, node: BSTNode) -> BSTNode:
+        raise NotImplementedError("recRemove method not Implemented")
+    
 
     def remove(self, info) -> None:
         raise NotImplementedError("Remove method not Implemented")
