@@ -73,7 +73,17 @@ class hashMap:
     
     # check if key exist
     def contains(self, key: Any) -> bool:
-        raise NotImplementedError("contains method for HashMap not implemented")
+        if self.isEmpty():
+            return False
+        
+        index = self._hash(key)
+        current = self.table[index]
+
+        while current:
+            if current.key == key:
+                return True
+            current = current.next
+        return False
 
     def isEmpty(self) -> bool:
         return(self.num_pairs == 0)

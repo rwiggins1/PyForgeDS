@@ -26,3 +26,10 @@ def test_is_empty():
     ht = hashMap(10)
 
     assert ht.isEmpty() == True
+
+def test_contains():
+    ht = hashMap()
+    assert ht.contains(3) == False
+    ht.put(3, 12)
+    assert ht.contains(3) == True
+    assert ht.contains(4) == False
