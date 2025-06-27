@@ -1,3 +1,4 @@
+from warnings import warn
 from PyForgeDS.trees.BinarySearchTree import BinarySearchTree
 
 def test_isEmpty():
@@ -26,3 +27,11 @@ def test_min_max():
     bst.add(100)
     assert bst.max() == 100
 
+def test_get():
+    bst = BinarySearchTree()
+    assert bst.get(3) == None
+    bst.add(3)
+    assert bst.get(3) == 3
+    bst.add(5)
+    assert bst.get(5) == 5
+    

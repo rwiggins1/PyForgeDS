@@ -20,11 +20,19 @@ class BinarySearchTree:
     def contains(self, target: Any) -> bool:
         raise  NotImplementedError("Contains method not Implemented")
 
-    def recGet(target: Any, node: BSTNode) -> Any:
-        raise  NotImplementedError("recGet method not Implemented")
+    def recGet(self, target: Any, node: BSTNode) -> Any:
+        if node == None:
+            return None
+        
+        if target < node.info:
+            return self.recGet(target, node.left)
+        if target > node.info:
+            return self.recGet(target, node.right)
+        
+        return node.info
 
-    def get(target: Any) -> Any:
-        raise  NotImplementedError("get method not Implemented")
+    def get(self, target: Any) -> Any:
+        return self.recGet(target, self.root)
     
     def min(self) -> Any:
         node = self.root
@@ -59,7 +67,7 @@ class BinarySearchTree:
                 node.right = BSTNode(info)
 
     def add(self, info) -> None:
-        if self.root == None:
+        if self.isEmpty():
             self.root = BSTNode(info)
         else:
             self.recAdd(info, self.root)
