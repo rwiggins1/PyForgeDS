@@ -22,7 +22,7 @@ At the same time, I want PyForgeDS to be a helpful resource for others who are l
 
 ---
 
-## 🧱 Included Data Structures (In Progess)
+## 🧱 Included Data Structures (In Progress)
 
 - **Trees**
   - Binary Search Tree (BST)
