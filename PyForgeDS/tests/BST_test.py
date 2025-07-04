@@ -35,3 +35,11 @@ def test_get():
     bst.add(5)
     assert bst.get(5) == 5
     
+def test_contains():
+    bst = BinarySearchTree()
+    assert bst.contains(3) == False
+    bst.add(3)
+    assert bst.contains(3) == True
+    bst.add(5)
+    assert bst.contains(5) == True
+    

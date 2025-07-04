@@ -15,10 +15,18 @@ class BinarySearchTree:
         raise  NotImplementedError("Size method not Implemented")
 
     def recContains(self, target: Any, node: BSTNode) -> bool:
-        raise  NotImplementedError("recContains method not Implemented")
+        if node == None:
+            return False
+        
+        if target < node.info:
+            return self.recContains(target, node.left)
+        if target > node.info:
+            return self.recContains(target, node.right)
+        
+        return True
 
     def contains(self, target: Any) -> bool:
-        raise  NotImplementedError("Contains method not Implemented")
+        return self.recContains(target, self.root)
 
     def recGet(self, target: Any, node: BSTNode) -> Any:
         if node == None:
@@ -74,7 +82,10 @@ class BinarySearchTree:
 
     def recRemove(self, target: Any, node: BSTNode) -> BSTNode:
         raise NotImplementedError("recRemove method not Implemented")
-    
 
-    def remove(self, info) -> None:
-        raise NotImplementedError("Remove method not Implemented")
+    def removeNode(self, node: BSTNode) -> None:
+        raise NotImplementedError("recNode method not Implemented")
+
+    def remove(self, target) -> bool:
+        raise NotImplementedError("remove method not Implemented")
+
