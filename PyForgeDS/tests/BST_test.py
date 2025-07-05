@@ -42,4 +42,32 @@ def test_contains():
     assert bst.contains(3) == True
     bst.add(5)
     assert bst.contains(5) == True
+ 
+def test_remove():
+    # Remove when node had no children
+    bst = BinarySearchTree()
+    assert bst.remove(2) == False
+    bst.add(5)
+    bst.add(2)
+    bst.add(7)
+    assert bst.remove(2) == True
     
+    # Remove when node has one child
+    bst2 = BinarySearchTree()
+    assert bst2.remove(2) == False
+    bst2.add(5)
+    bst2.add(2)
+    bst2.add(7)
+    bst2.add(3)
+    assert bst2.remove(2) == True
+    
+    # Remove when node has two children
+    bst3 = BinarySearchTree()
+    assert bst3.remove(2) == False
+    bst3.add(5)
+    bst3.add(2)
+    bst3.add(7)
+    bst3.add(3)
+    bst3.add(1)
+    assert bst3.remove(2) == True
+

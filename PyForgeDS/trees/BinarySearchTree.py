@@ -81,11 +81,36 @@ class BinarySearchTree:
             self.recAdd(info, self.root)
 
     def recRemove(self, target: Any, node: BSTNode) -> BSTNode:
-        raise NotImplementedError("recRemove method not Implemented")
+        if node is None:
+            return None
 
-    def removeNode(self, node: BSTNode) -> None:
-        raise NotImplementedError("recNode method not Implemented")
+        if target < node.info:
+            node.left = self.recRemove(target, node.left)
+        elif target > node.info:
+            node.right = self.recRemove(target, node.right)
+        else:
+            # Node with one or no child
+            if node.left is None:
+                return node.right
+            elif node.right is None:
+                return node.left
 
-    def remove(self, target) -> bool:
-        raise NotImplementedError("remove method not Implemented")
+            # Node with two children
+            # Find in-order successor (smallest in right subtree)
+            min_larger_node = self._minNode(node.right)
+            node.info = min_larger_node.info
+            node.right = self.recRemove(min_larger_node.info, node.right)
+
+        return node
+
+    def _minNode(self, node: BSTNode) -> BSTNode:
+        while node.left:
+            node = node.left
+        return node
+
+    def remove(self, target: Any) -> bool:
+        if not self.contains(target):
+            return False
+        self.root = self.recRemove(target, self.root)
+        return True
 
