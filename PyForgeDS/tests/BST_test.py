@@ -71,3 +71,15 @@ def test_remove():
     bst3.add(1)
     assert bst3.remove(2) == True
 
+def test_size():
+    bst = BinarySearchTree()
+    assert bst.remove(2) == False
+    bst.add(5)
+    bst.add(2)
+    bst.add(7)
+    bst.add(3)
+    bst.add(1)
+    assert bst.size() == 5
+    bst.remove(2)
+    assert bst.size() == 4
+

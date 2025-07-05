@@ -4,15 +4,13 @@ from PyForgeDS.base.BSTNode import BSTNode
 class BinarySearchTree:
     def __init__(self):
         self.root = None
+        self.node_num = 0
 
     def isEmpty(self):
         return(self.root == None)
 
-    def recSize(self, node: BSTNode) -> int:
-        raise  NotImplementedError("recSize method not Implemented")
-
     def size(self) -> int:
-        raise  NotImplementedError("Size method not Implemented")
+        return self.node_num
 
     def recContains(self, target: Any, node: BSTNode) -> bool:
         if node == None:
@@ -62,7 +60,7 @@ class BinarySearchTree:
                 node = node.right
             return node.info
 
-    def recAdd(self, info: Any, node: BSTNode):
+    def recAdd(self, info: Any, node: BSTNode) -> None:
         if info < node.info:
             if node.left:
                 return self.recAdd(info, node.left)
@@ -79,6 +77,7 @@ class BinarySearchTree:
             self.root = BSTNode(info)
         else:
             self.recAdd(info, self.root)
+        self.node_num+=1
 
     def recRemove(self, target: Any, node: BSTNode) -> BSTNode:
         if node is None:
@@ -112,5 +111,6 @@ class BinarySearchTree:
         if not self.contains(target):
             return False
         self.root = self.recRemove(target, self.root)
+        self.node_num-=1
         return True
 
