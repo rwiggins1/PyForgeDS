@@ -17,5 +17,27 @@ class LinkBasedList:
         raise NotImplementedError("Set method not finished")
 
     def add(self, index: int, element: Any) -> None:
-        raise NotImplementedError("Add method not implemented")
+        if(index < 0 or index > self.size()):
+            raise IndexError("Index out of bounds")
+        
+        newNode = LLNode(element)
+        if(index == 0):
+            if(self.front == None):
+                self.front = newNode
+                self.rear = newNode
+            else:
+                newNode.next = self.front
+                self.front = newNode
+        elif(index == self.size()):
+            self.rear.next = newNode
+            self.rear = newNode
+        else:
+            current = self.front
+            for i in range(index-1):
+                current = current.next
+
+            next_node = current.next
+            current.next = newNode
+            newNode.next = next_node
+        self.num_elements+=1
 
