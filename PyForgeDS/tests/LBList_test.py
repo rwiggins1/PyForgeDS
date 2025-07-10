@@ -8,4 +8,5 @@ def test_add():
     print(lbl.front.data, lbl.rear.data)
     lbl.add(0, 1)
     print(lbl.front.data, lbl.front.next.data, lbl.rear.data)
+    print(lbl)
 

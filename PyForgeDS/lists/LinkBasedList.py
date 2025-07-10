@@ -41,3 +41,11 @@ class LinkBasedList:
             newNode.next = next_node
         self.num_elements+=1
 
+    def __iter__(self):
+        curr = self.front
+        while curr:
+            yield curr.data
+            curr = curr.next
+
+    def __repr__(self):
+        return f"LinkedList([{' -> '.join(repr(x) for x in self)}])"
