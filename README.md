@@ -55,7 +55,7 @@ At the same time, I want PyForgeDS to be a helpful resource for others who are l
 
 ## 🚀 Getting Started (In Progess)
 
-I do plan on making this library usable but the python version will be mainly for doing performance benchmarking
+I do plan on making this library usable but the python version will be mainly for doing performance benchmarking.
 
 ---
 
