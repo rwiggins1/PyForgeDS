@@ -11,6 +11,14 @@ def test_insert():
 
     ht.display()
 
+def test_remove():
+    ht = hashMap(5)
+    ht.put("A", 74)
+    ht.display()
+    ht.remove("A")
+
+    ht.display()
+
 def test_size():
     ht = hashMap(10)
     ht.put("A", 10)
