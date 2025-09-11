@@ -11,7 +11,7 @@ class LinkBasedList:
         return self.num_elements
 
     def set(self, index: int, new_element: Any):
-        if(index < 0 or index > self.size()):
+        if(index < 0 or index >= self.size()):
             raise IndexError("Index out of bounds")
 
         raise NotImplementedError("Set method not finished")
