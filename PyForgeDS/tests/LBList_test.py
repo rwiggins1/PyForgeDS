@@ -1,4 +1,11 @@
 from PyForgeDS.lists.LinkBasedList import LinkBasedList
+from PyForgeDS.base.LLNode import LLNode
+
+def test_node():
+    node = LLNode(12)
+    assert node.getData() == 12
+    node.setData(13)
+    assert node.getData() == 13
 
 def test_add():
     lbl = LinkBasedList()
