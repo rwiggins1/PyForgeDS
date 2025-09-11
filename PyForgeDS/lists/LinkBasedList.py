@@ -7,8 +7,6 @@ class LinkBasedList:
         self.front = None
         self.rear = None
     
-    def size(self) -> int:
-        return self.num_elements
 
     def set(self, index: int, new_element: Any):
         if(index < 0 or index >= self.size()):
@@ -40,6 +38,12 @@ class LinkBasedList:
             current.next = newNode
             newNode.next = next_node
         self.num_elements+=1
+
+    def size(self) -> int:
+        return self.num_elements
+
+    def isEmpty(self) -> bool:
+        return self.num_elements == 0;
 
     def getFront(self) -> LLNode:
         return self.front
