@@ -12,7 +12,7 @@ class LLNode:
         return self.next
     
     def setData(self, data) -> None:
-        self.data = data;
+        self.data = data
 
     def setNext(self, node) -> None:
         self.next = node
