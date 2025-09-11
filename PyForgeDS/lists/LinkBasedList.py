@@ -41,6 +41,12 @@ class LinkBasedList:
             newNode.next = next_node
         self.num_elements+=1
 
+    def getFront(self) -> LLNode:
+        return self.front
+    
+    def getRear(self) -> LLNode:
+        return self.rear
+
     def __iter__(self):
         curr = self.front
         while curr:
