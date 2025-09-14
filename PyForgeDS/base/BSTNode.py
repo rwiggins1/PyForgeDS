@@ -14,6 +14,16 @@ class BSTNode:
     
     def getRight(self) -> Any:
         return self.right
+
+    def setInfo(self,  element: Any) -> None:
+        self.info = element
+
+    def setLeft(self, element: Any) -> None:
+        self.left = element
+
+    def setRight(self, element: Any) -> None:
+        self.right = element
+
         
     def __repr__(self):
             return f"BSTNode({self.info}, left={self.left}, right={self.right})"
