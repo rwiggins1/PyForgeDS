@@ -114,3 +114,6 @@ class BinarySearchTree:
         self.node_num-=1
         return True
 
+    def getHead(self) -> BSTNode:
+        return self.root
+
