@@ -12,3 +12,10 @@ def test_add():
     assert lbl.getFront().getNext().getData() == 10
     assert lbl.getRear().getData() == 20
 
+def test_set():
+    lbl = LinkBasedList()
+    lbl.add(0, 13)
+    assert lbl.set(0, 14) == 14
+    lbl.add(1, 15)
+    assert lbl.set(1, 16) == 16
+

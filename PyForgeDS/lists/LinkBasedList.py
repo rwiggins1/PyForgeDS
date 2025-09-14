@@ -8,11 +8,26 @@ class LinkBasedList:
         self.rear = None
     
 
-    def set(self, index: int, new_element: Any):
+    def set(self, index: int, new_element: Any) -> Any:
         if(index < 0 or index >= self.size()):
             raise IndexError("Index out of bounds")
 
-        raise NotImplementedError("Set method not finished")
+        if index == 0:
+            self.getFront().setData(new_element)
+            return self.getFront().getData()
+
+        elif index == self.size()-1:
+            self.getRear().setData(new_element)
+            return self.getRear().getData()
+
+        else:
+            current = self.getFront()
+            for i in range(self.size()-1):
+                current = current.getNext()
+
+            current.setData(new_element)
+            return current.getData()
+
 
     def add(self, index: int, element: Any) -> None:
         if(index < 0 or index > self.size()):
