@@ -66,6 +66,12 @@ class LinkBasedList:
     def getRear(self) -> LLNode:
         return self.rear
 
+    def setFront(self, node: LLNode) -> None:
+        self.front = node
+
+    def setRear(self, node: LLNode) -> None:
+        self.rear = node
+
     def __iter__(self):
         curr = self.front
         while curr:
