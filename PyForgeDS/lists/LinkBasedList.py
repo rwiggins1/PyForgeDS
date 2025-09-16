@@ -20,7 +20,7 @@ class LinkBasedList:
             return self.getRear().getData()
         else:
             current = self.getFront()
-            for i in range(self.size()-1):
+            for _ in range(self.size()-1):
                 current = current.getNext()
 
             current.setData(new_element)
@@ -45,7 +45,7 @@ class LinkBasedList:
             self.setRear(newNode)
         else:
             current = self.getFront()
-            for i in range(index-1):
+            for _ in range(index-1):
                 current = current.getNext()
 
             next_node = current.next
