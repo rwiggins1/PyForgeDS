@@ -15,11 +15,9 @@ class LinkBasedList:
         if index == 0:
             self.getFront().setData(new_element)
             return self.getFront().getData()
-
         elif index == self.size()-1:
             self.getRear().setData(new_element)
             return self.getRear().getData()
-
         else:
             current = self.getFront()
             for i in range(self.size()-1):
@@ -35,19 +33,20 @@ class LinkBasedList:
         
         newNode = LLNode(element)
         if(index == 0):
-            if(self.front == None):
-                self.front = newNode
-                self.rear = newNode
+            if(self.getFront() == None):
+                self.setFront(newNode)
+                self.setRear(newNode)
             else:
-                newNode.next = self.front
-                self.front = newNode
+                newNode.setNext(self.getFront())
+                self.setFront(newNode)
         elif(index == self.size()):
-            self.rear.next = newNode
-            self.rear = newNode
+            next_node = self.getRear().getNext()
+            self.getRear().setNext(newNode)
+            self.setRear(newNode)
         else:
-            current = self.front
+            current = self.getFront()
             for i in range(index-1):
-                current = current.next
+                current = current.getNext()
 
             next_node = current.next
             current.next = newNode
