@@ -1,10 +1,10 @@
-# PyForgeDS 🔧🐍
+# PyForgeDS
 
 **A Python Data Structure and Algorithms Library for Learning and Practice**
 
 ---
 
-## 📚 About
+## About
 
 **PyForgeDS** is a personal side project designed to help **learn, implement, and teach** data structures and algorithms using Python. I'm building this library as a way to **supplement my own journey** through learning DSA—by implementing everything from "scratch" to deepen my understanding.
 
@@ -14,15 +14,15 @@ At the same time, I want PyForgeDS to be a helpful resource for others who are l
 
 ---
 
-## 🎯 Goals
+## Goals
 
-- ✅ Learn and solidify knowledge of data structures and algorithms
-- ✅ Provide easy-to-understand implementations in pure Python
-- ✅ Help others explore DSA concepts through clean code and documentation
+- Learn and solidify knowledge of data structures and algorithms
+- Provide easy-to-understand implementations in pure Python
+- Help others explore DSA concepts through clean code and documentation
 
 ---
 
-## 🧱 Included Data Structures (In Progress)
+## Included Data Structures (In Progress)
 
 - **Trees**
   - Binary Search Tree (BST)
@@ -53,11 +53,6 @@ At the same time, I want PyForgeDS to be a helpful resource for others who are l
 
 ---
 
-## 🚀 Getting Started (In Progess)
+## Getting Started (In Progess)
 
 I do plan on making this library usable but the python version will be mainly for doing performance benchmarking.
-
----
-
-## 🤝 Contributing (In Progress)
-
